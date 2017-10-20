@@ -10,6 +10,15 @@
     "unit": "cross-env BABEL_ENV=test karma start --single-run --no-fail-on-empty-test-suite tests/unit/karma.conf.js",
     "unit-watch": "cross-env BABEL_ENV=test karma start --no-fail-on-empty-test-suite tests/unit/karma.conf.js --auto-watch"
   },
+  "keywords": [
+    "vue",
+    "configuration",
+    "config",
+    "vuejs"
+  ],
+  "files": [
+    "dist/*.js"
+  ],
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
