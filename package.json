@@ -1,8 +1,8 @@
 {
   "name": "vue-configuration",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a static config for vue.js",
-  "main": "src/index.min.js",
+  "main": "src/index.js",
   "repository": "https://github.com/alex-oleshkevich/vue-config",
   "author": "Alex Oleshkevich",
   "license": "MIT",
