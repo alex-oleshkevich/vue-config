@@ -29,7 +29,7 @@ export class Config {
         if (!obj) {
             obj = this.config;
         }
-        const found = path.split('.').reduce((v, k) => v[k], obj);
+        const found = path.split('.').reduce((v, k) => v && v[k], obj);
         if (found === undefined) {
             return def;
         }
