@@ -29,11 +29,26 @@ export class Config {
         if (!obj) {
             obj = this.config;
         }
-        const found = path.split('.').reduce((v, k) => v && v[k], obj);
-        if (found === undefined) {
+
+        if (!this.has(path, obj)) {
             return def;
         }
-        return found;
+        return path.split('.').reduce((v, k) => v && v[k], obj);
+    }
+
+    /**
+     * Test if path is in obj.
+     */
+    has(path, obj) {
+        if (!obj) {
+            obj = this.config;
+        }
+        try {
+            const found = this._lookUp(path, obj);
+            return (found !== undefined);
+        } catch (e) {
+            return false;
+        }
     }
 
     /**
@@ -43,6 +58,16 @@ export class Config {
      */
     replace(obj) {
         this.config = obj;
+    }
+
+    /**
+     * Performs a path lookup in obj.
+     *
+     * @param {string} path
+     * @param {Object} obj
+     */
+    _lookUp(path, obj) {
+        return path.split('.').reduce((v, k) => v[k], obj);
     }
 };
 

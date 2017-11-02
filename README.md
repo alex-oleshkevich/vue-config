@@ -44,6 +44,13 @@ Replace config:
 this.$config.replace({ new: 'data' });
 ```
 
+Test if path exists:
+```javascript
+// obj = { a: 1 }
+this.$config.has('a.b.c'); // false
+this.$config.has('a'); // true
+```
+
 Get config object:
 ```javascript
 this.$config.all();
